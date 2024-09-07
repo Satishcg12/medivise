@@ -39,7 +39,6 @@ export default function AddDoctorForm() {
       qualifications: [],
       experience: "",
       consultationFee: 0,
-      maxConsultationFee: 0,
       commission: 0,
     },
   })
@@ -202,22 +201,9 @@ export default function AddDoctorForm() {
               name="consultationFee"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Consultation Fee (Min)</FormLabel>
+                  <FormLabel>Consultation Fee</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="Minimum Fee" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="maxConsultationFee"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Consultation Fee (Max)</FormLabel>
-                  <FormControl>
-                    <Input type="number" placeholder="Maximum Fee" {...field} />
+                    <Input type="number" placeholder="Rs XXX" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
