@@ -13,6 +13,8 @@
 // import { useEffect, useState } from "react";
 // import { useSearchParams } from "next/navigation";
 
+import DoctorCard from "./DoctorCard";
+
 // export default function DoctorPage() {
 //   const [selectedCategorys, setSelectedCategorys] = useState<string[]>([]);
 //   const [suggest, setSuggest] = useState<string>("");
@@ -91,7 +93,7 @@ export default async function DoctorPage() {
   console.log(categoryies);
   console.log(suggestion);
 
-  let allDoctors: any[]=[]
+  let allDoctors: any[] = [];
   for (const category of categoryies) {
     let doctors = await fetch("http://localhost:3000/api/doctorDetail", {
       method: "POST",
@@ -105,13 +107,14 @@ export default async function DoctorPage() {
     let response = await doctors.json();
     allDoctors = [...allDoctors, ...response.data];
   }
-  
+
   console.log(allDoctors);
-  
-  
+
   return (
-    <div>
-      
+    <div className="ml-auto grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ">
+      {allDoctors.map((doctor) => (
+        <DoctorCard data={doctor}  />
+      ))}
     </div>
   );
 }
