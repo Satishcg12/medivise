@@ -32,7 +32,7 @@ export const doctorCategories = [
   "Gynecologist",
 ];
 
-function DoctorCard() {
+function DoctorCard({showButton = true}) {
   return (
     <Card className="border-none overflow-hidden bg-muted p-0.5 hover:bg-primary transition-all duration-500 rounded-xl h-fit shadow-md hover:shadow-lg">
       <div className="relative overflow-hidden">
@@ -69,6 +69,7 @@ function DoctorCard() {
               <p className="text-xs text-muted-foreground">Experience</p>
             </div>
           </div>
+          {showButton && (
           <div className="flex items-center space-x-2">
             <Button
               variant="secondary"
@@ -82,6 +83,7 @@ function DoctorCard() {
               </Link>
             </Button>
           </div>
+          )}
         </CardContent>
       </div>
     </Card>
