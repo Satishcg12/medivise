@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Card,
@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { addDoctorSchema } from "@/components/schema/addDoctorSchema";
+import { addDoctorSchema } from "@/schema/addDoctorSchema";
 import {
   Form,
   FormControl,
@@ -21,7 +21,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Loader2 } from "lucide-react";
-import { z } from "zod"
+import { z } from "zod";
+import { UploadButton, UploadDropzone } from "@/app/utils/uploadthings";
 
 export default function AddDoctorForm() {
   const form = useForm<z.infer<typeof addDoctorSchema>>({
@@ -40,7 +41,7 @@ export default function AddDoctorForm() {
       consultationFee: 0,
       commission: 0,
     },
-  })
+  });
 
   const onSubmit = async (data: z.infer<typeof addDoctorSchema>) => {
     // Simulate asynchronous submission (e.g., API call)
@@ -58,7 +59,10 @@ export default function AddDoctorForm() {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="grid md:grid-cols-2 gap-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="grid md:grid-cols-2 gap-6"
+          >
             <FormField
               control={form.control}
               name="name"
@@ -111,18 +115,17 @@ export default function AddDoctorForm() {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="image"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Profile Image URL</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Image URL" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+            <UploadButton
+              endpoint="imageUploader"
+              onClientUploadComplete={(res) => {
+                // Do something with the response
+                console.log("Files: ", res);
+                alert("Upload Completed");
+              }}
+              onUploadError={(error: Error) => {
+                // Do something with the error.
+                alert(`ERROR! ${error.message}`);
+              }}
             />
             <FormField
               control={form.control}
@@ -186,10 +189,7 @@ export default function AddDoctorForm() {
                 <FormItem>
                   <FormLabel>Experience (Years)</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="X months/years"
-                      {...field}
-                    />
+                    <Input placeholder="X months/years" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -225,8 +225,10 @@ export default function AddDoctorForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={form.formState.isSubmitting}
-            className="col-span-2"
+            <Button
+              type="submit"
+              disabled={form.formState.isSubmitting}
+              className="col-span-2"
             >
               {form.formState.isSubmitting && (
                 <Loader2 className="size-4 mr-2 animate-spin" />
