@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import TabMenus from "./TabMenus";
 
 function DashboardPage() {
   return (
@@ -21,23 +21,14 @@ function DashboardPage() {
           A social media influencers and singer
         </p>
       </div>
-      <div className="flex flex-col sm:flex-row max-sm:gap-5 items-center justify-between mb-5">
-        <Tabs defaultValue="account" className="w-[400px]">
-          <TabsList>
-            <TabsTrigger value="account">Account</TabsTrigger>
-            <TabsTrigger value="password">Password</TabsTrigger>
-          </TabsList>
-          <TabsContent value="account">
-            Make changes to your account here.
-          </TabsContent>
-          <TabsContent value="password">Change your password here.</TabsContent>
-        </Tabs>
-
+      <div>
+        <TabMenus>
         <div className="flex items-center gap-4">
           <Button variant="outline">Edit Profile</Button>
           <Button variant="outline">Report</Button>
           <Button>Book a Session</Button>
         </div>
+          </TabMenus>
       </div>
     </>
   );
