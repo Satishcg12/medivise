@@ -12,7 +12,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { addDoctorSchema } from "@/components/schema/addDoctorSchema";
-import { doctorFormInterface } from "@/components/schema/addDoctorSchema";
 import {
   Form,
   FormControl,
@@ -214,7 +213,7 @@ export default function AddDoctorForm() {
               name="commission"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Commission</FormLabel>
+                  <FormLabel>Commission Percentage</FormLabel>
                   <FormControl>
                     <Input
                       type="number"
