@@ -35,7 +35,7 @@ export async function RegisterDoctor(formData: doctorFormInterface) {
       qualifications: validateFormData.qualifications,
       experience: validateFormData.experience,
       consultationFee: validateFormData.consultationFee,
-      maxConsultationFee: validateFormData.consultationFee,
+      maxConsultationFee: validateFormData.commission,
     });
     await doctorDetail.save();
     revalidatePath("/admin/dashboard");

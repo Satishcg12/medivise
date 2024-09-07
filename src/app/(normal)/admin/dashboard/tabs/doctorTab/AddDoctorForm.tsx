@@ -61,8 +61,9 @@ export default function AddDoctorForm() {
     const res = await RegisterDoctor(data);
     if (res.success) {
       toast.success("Doctor Added Successfully");
+      form.reset();
     }else{
-      toast.error("Failed to add doctor");
+      toast.error(res.message);
     }
     
   };

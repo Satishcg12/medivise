@@ -6,15 +6,36 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import client from "@/lib/db";
 import dbConnect from "./lib/dbConnect";
 import UserModel from "./models/UserModel";
+import { User } from "lucide-react";
+import { doctorLoginSchema } from "./schema/doctorLoginSchema";
 
 const ADMIN_EMAILS = ["sung20700@gmail.com"];
 
 const providers: Provider[] = [
   Credentials({
     id: "credentials",
+    name: "Credentials",
     credentials: {
-      identifier: { label: "identifier", type: "text" },
-      password: { label: "Password", type: "password" },
+      email: {},
+      password: {},
+    },
+    authorize: async (credentials) => {
+      try {
+        let user = null;
+        const { email, password } = await doctorLoginSchema.parseAsync(credentials);
+        await dbConnect();
+        user = await UserModel.findOne({
+          email,
+          password,
+          role: "doctor",
+        });
+        if (!user) {
+          throw new Error("No user found");
+        }
+        return user
+      } catch (error) {
+        throw new Error("Error logging in");
+      }
     },
   }),
   google({
@@ -28,7 +49,7 @@ const providers: Provider[] = [
       },
     },
     allowDangerousEmailAccountLinking: true,
-    profile(profile)  {
+    profile(profile) {
       return {
         id: profile.id,
         name: profile.name,
@@ -39,7 +60,6 @@ const providers: Provider[] = [
         verified: true,
       };
     },
-
   }),
 ];
 
@@ -55,10 +75,13 @@ export const providerMap = providers
   .filter((provider) => provider.id !== "credentials");
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-    theme:{
-        logo: "/images/medivise-logo.png",
-        brandColor: "#000000",
-    },
+  theme: {
+    logo: "/images/medivise-logo.png",
+    brandColor: "#fff",
+  },
+  pages: {
+    // signIn: "/doctor/login",
+  },
   adapter: MongoDBAdapter(client),
   providers,
   callbacks: {
@@ -77,4 +100,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
   },
+  session: {  
+    strategy: "jwt",
+  },
+  secret: process.env.AUTH_SECRET,
 });
