@@ -11,7 +11,6 @@ export interface doctorFormInterface {
   qualifications: string[];
   experience: string;
   consultationFee: number;
-  maxConsultationFee: number;
   commission: number;
 }
 
@@ -27,7 +26,6 @@ export const addDoctorSchema = z.object({
   qualifications: z.array(z.string()).min(1),
   experience: z.string().min(0),
   consultationFee: z.number().positive(),
-  maxConsultationFee: z.number().positive(),
   commission: z.number().min(0).max(100),
 })
 
