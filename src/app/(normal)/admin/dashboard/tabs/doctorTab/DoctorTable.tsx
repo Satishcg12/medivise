@@ -35,8 +35,8 @@ import { Badge } from "@/components/ui/badge";
 function DoctorTable() {
   const [doctors, setDoctors] = useState<DoctoreData[]>([]);
 
-  const deleteTableRow = (key: number) => {
-    setDoctors(doctors.filter((doctor) => doctor.id !== key.toString()));
+  const deleteTableRow = (key: string) => {
+    setDoctors(doctors.filter((doctor) => doctor.id !== key));
   };
 
   const fetchDoctors = async () => {
@@ -80,7 +80,7 @@ function DoctorTable() {
                       alt="doctor image"
                       width={40}
                       height={40}
-                      className="w-full rounded-full object-cover object-center"
+                      className="w-full rounded-full object-cover object-center aspect-square"
                     />
                   </TableCell>
                   <TableCell>
@@ -104,7 +104,7 @@ function DoctorTable() {
                       <DropdownMenuContent>
                         <DropdownMenuItem className="p-0">
                           <Button
-                            onClick={() => deleteTableRow(1)}
+                            onClick={() => deleteTableRow(doctor.id)}
                             variant="ghost"
                             className="justify-start w-full"
                           >

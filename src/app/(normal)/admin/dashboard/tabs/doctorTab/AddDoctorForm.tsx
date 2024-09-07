@@ -33,6 +33,7 @@ import {
 } from "@/components/ui/select";
 import { doctorCategories } from "@/app/(normal)/doctor/DoctorCard";
 import { RegisterDoctor } from "../../action";
+import { toast } from "sonner";
 
 export default function AddDoctorForm() {
   const form = useForm<z.infer<typeof addDoctorSchema>>({
@@ -59,9 +60,9 @@ export default function AddDoctorForm() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     const res = await RegisterDoctor(data);
     if (res.success) {
-      alert("Doctor Added Successfully");
+      toast.success("Doctor Added Successfully");
     }else{
-      alert("Doctor Not Added");
+      toast.error("Failed to add doctor");
     }
     
   };
