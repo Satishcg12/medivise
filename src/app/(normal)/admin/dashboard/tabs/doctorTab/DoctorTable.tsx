@@ -15,6 +15,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Ellipsis } from "lucide-react";
 
 function DoctorTable() {
   return (
@@ -33,15 +43,44 @@ function DoctorTable() {
               <TableHead className="w-[100px]">Image</TableHead>
               <TableHead>Basic Info</TableHead>
               <TableHead>Fees</TableHead>
-              <TableHead className="text-right">Exp</TableHead>
+              <TableHead className="text-right">Exp & Qual</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="font-medium">INV001</TableCell>
-              <TableCell>Paid</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
+              <TableCell className="font-medium">
+                <Image
+                  src="/images/doctor_pic.png"
+                  alt="doctor image"
+                  width={40}
+                  height={40}
+                  className="w-full rounded-full object-cover object-center"
+                />
+              </TableCell>
+              <TableCell>
+                <p>Name</p>
+                <p>Email</p>
+                <p>Specialization</p>
+              </TableCell>
+              <TableCell>
+                <p>Consultation</p>
+                <p>Commision Rate</p>
+              </TableCell>
+              <TableCell>
+                <p>Experience</p>
+                <p>Qualifications</p>
+              </TableCell>
+              <TableCell>
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <Ellipsis className="w-6 h-6" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>Delete</DropdownMenuItem>
+                    <DropdownMenuItem>Edit</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
