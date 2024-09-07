@@ -1,0 +1,221 @@
+{
+  "medicines": [
+    {
+      "name": "Paracetamol",
+      "generic_name": "Acetaminophen",
+      "uses": [
+        "Pain relief",
+        "Fever reduction"
+      ],
+      "cautions": [
+        "Liver damage risk if overdosed",
+        "Not suitable for children under 2 years"
+      ],
+      "side_effects": [
+        "Nausea",
+        "Vomiting",
+        "Allergic reactions"
+      ],
+      "dosage": {
+        "adults": "500-1000 mg every 4-6 hours",
+        "children": "Consult a doctor for appropriate dosage"
+      },
+      "interactions": [
+        "Avoid with other acetaminophen-containing medications"
+      ],
+      "safe_during_pregnancy": "Yes",
+      "safe_for_children": "Yes",
+      "child_do_not_use": false,
+      "additional_notes": "May interact with certain medications. Consult a healthcare provider for specific advice."
+    },
+    {
+      "name": "Ibuprofen",
+      "generic_name": "Ibuprofen",
+      "uses": [
+        "Pain relief",
+        "Inflammation reduction",
+        "Fever reduction"
+      ],
+      "cautions": [
+        "Increases risk of stomach ulcers with prolonged use",
+        "Avoid if allergic to NSAIDs",
+        "Not recommended for individuals with kidney issues"
+      ],
+      "side_effects": [
+        "Heartburn",
+        "Dizziness",
+        "Rash",
+        "Stomach pain"
+      ],
+      "dosage": {
+        "adults": "200-400 mg every 4-6 hours as needed",
+        "children": "10 mg per kg of body weight every 6-8 hours"
+      },
+      "interactions": [
+        "Avoid with blood thinners (e.g., warfarin)",
+        "Avoid mixing with alcohol"
+      ],
+      "safe_during_pregnancy": "No, especially after 30 weeks",
+      "safe_for_children": "Yes",
+      "child_do_not_use": false,
+      "additional_notes": "Take with food to reduce stomach irritation."
+    },
+    {
+      "name": "Amoxicillin",
+      "generic_name": "Amoxicillin",
+      "uses": [
+        "Bacterial infections",
+        "Respiratory tract infections",
+        "Ear infections",
+        "Skin infections"
+      ],
+      "cautions": [
+        "Allergic reactions in individuals sensitive to penicillin",
+        "May cause diarrhea"
+      ],
+      "side_effects": [
+        "Nausea",
+        "Diarrhea",
+        "Rash",
+        "Yeast infections (in women)"
+      ],
+      "dosage": {
+        "adults": "250-500 mg every 8 hours",
+        "children": "Consult a doctor for appropriate dosage"
+      },
+      "interactions": [
+        "May reduce the effectiveness of oral contraceptives",
+        "Avoid combining with methotrexate"
+      ],
+      "safe_during_pregnancy": "Yes",
+      "safe_for_children": "Yes",
+      "child_do_not_use": false,
+      "additional_notes": "Complete the full course even if symptoms improve to prevent resistance."
+    },
+    {
+      "name": "Aspirin",
+      "generic_name": "Acetylsalicylic acid",
+      "uses": [
+        "Pain relief",
+        "Fever reduction",
+        "Anti-inflammatory",
+        "Blood thinner"
+      ],
+      "cautions": [
+        "Not recommended for children under 16 (risk of Reye's syndrome)",
+        "Can cause stomach ulcers with prolonged use",
+        "Avoid in individuals with asthma"
+      ],
+      "side_effects": [
+        "Stomach upset",
+        "Bleeding",
+        "Bruising",
+        "Ringing in the ears"
+      ],
+      "dosage": {
+        "adults": "300-600 mg every 4-6 hours",
+        "children": "Consult a doctor (generally not recommended)"
+      },
+      "interactions": [
+        "Avoid with anticoagulants (e.g., warfarin)",
+        "Avoid with NSAIDs like ibuprofen"
+      ],
+      "safe_during_pregnancy": "No, especially in the third trimester",
+      "safe_for_children": "No",
+      "child_do_not_use": true,
+      "additional_notes": "Aspirin is commonly used for its blood-thinning properties but should be used cautiously in specific populations."
+    },
+    {
+      "name": "Loratadine",
+      "generic_name": "Loratadine",
+      "uses": [
+        "Allergy relief",
+        "Hay fever",
+        "Hives"
+      ],
+      "cautions": [
+        "May cause drowsiness in sensitive individuals",
+        "Use with caution if you have liver or kidney disease"
+      ],
+      "side_effects": [
+        "Headache",
+        "Drowsiness (rare)",
+        "Dry mouth"
+      ],
+      "dosage": {
+        "adults": "10 mg once daily",
+        "children": "5 mg once daily for children aged 2-5"
+      },
+      "interactions": [
+        "May interact with certain antibiotics like erythromycin",
+        "Avoid with ketoconazole"
+      ],
+      "safe_during_pregnancy": "Yes",
+      "safe_for_children": "Yes",
+      "child_do_not_use": false,
+      "additional_notes": "This is a non-drowsy antihistamine commonly used for seasonal allergies."
+    },
+    {
+      "name": "Ciprofloxacin",
+      "generic_name": "Ciprofloxacin",
+      "uses": [
+        "Bacterial infections",
+        "Urinary tract infections",
+        "Respiratory infections"
+      ],
+      "cautions": [
+        "Avoid in children under 18 (risk of joint and tendon issues)",
+        "May cause tendon rupture in adults",
+        "Avoid sun exposure as it increases sensitivity to sunlight"
+      ],
+      "side_effects": [
+        "Nausea",
+        "Diarrhea",
+        "Dizziness",
+        "Tendon pain"
+      ],
+      "dosage": {
+        "adults": "250-750 mg every 12 hours",
+        "children": "Not recommended for children under 18"
+      },
+      "interactions": [
+        "Avoid with antacids or dairy products",
+        "May interact with blood thinners"
+      ],
+      "safe_during_pregnancy": "No",
+      "safe_for_children": "No",
+      "child_do_not_use": true,
+      "additional_notes": "Ciprofloxacin is a powerful antibiotic and should be used carefully due to its potential side effects on tendons."
+    },
+    {
+      "name": "Cetirizine",
+      "generic_name": "Cetirizine",
+      "uses": [
+        "Allergy relief",
+        "Hay fever",
+        "Hives"
+      ],
+      "cautions": [
+        "May cause mild drowsiness",
+        "Use with caution in patients with kidney disease"
+      ],
+      "side_effects": [
+        "Dry mouth",
+        "Drowsiness",
+        "Fatigue"
+      ],
+      "dosage": {
+        "adults": "10 mg once daily",
+        "children": "5 mg once daily for children aged 2-6"
+      },
+      "interactions": [
+        "May interact with alcohol or sedatives",
+        "Use caution when driving or operating machinery"
+      ],
+      "safe_during_pregnancy": "Yes",
+      "safe_for_children": "Yes",
+      "child_do_not_use": false,
+      "additional_notes": "Cetirizine is a common non-drowsy antihistamine for allergies, though some individuals may experience mild drowsiness."
+    }
+  ]
+}

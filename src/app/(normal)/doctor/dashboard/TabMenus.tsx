@@ -1,6 +1,7 @@
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "@/components/ui/tabs";
 import ScheduleForm from "./tabs/ScheduleTab/scheduleForm";
 import aboutDoctor from "./tabs/AboutTab/aboutDoctor";
+import AppointmentGrid from "./tabs/AppointmentTab/AppointmentGrid";
 
 interface Tab {
   label: string;
@@ -10,7 +11,7 @@ interface Tab {
 function TabMenus({ children }: { children?: React.ReactNode }) {
   const tabs: Tab[] = [
     { label: "about me", Component: aboutDoctor },
-    { label: "appointment", Component: ScheduleForm },
+    { label: "appointment", Component: AppointmentGrid },
     { label: "schedule", Component: ScheduleForm },
   ];
 

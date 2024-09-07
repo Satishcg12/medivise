@@ -10,6 +10,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { features } from "@/app/(normal)/landing/Features";
 
 // Define types for NavMenuLink props
 interface NavMenuLinkProps {
@@ -23,30 +24,16 @@ export function DesktopNavBar() {
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/doctors" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
-                <NavMenuLink
-                  href="getting-started/installation"
-                  title="Installation"
-                  description="Get up and running in minutes."
+              <ul className="p-4  w-[36rem] grid grid-cols-3 gap-4">
+                {features.map((feature, index) => (
+                  <NavMenuLink
+                  href={feature.href}
+                  title={feature.title}
+                  description={feature.description}
                 />
-                <NavMenuLink
-                  href="getting-started/usage"
-                  title="Usage"
-                  description="Learn how to use the library."
-                />
-                <NavMenuLink
-                  href="getting-started/faq"
-                  title="FAQ"
-                />
+                ))}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
