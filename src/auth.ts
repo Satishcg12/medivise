@@ -55,6 +55,10 @@ export const providerMap = providers
   .filter((provider) => provider.id !== "credentials");
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+    theme:{
+        logo: "/images/medivise-logo.png",
+        brandColor: "#000000",
+    },
   adapter: MongoDBAdapter(client),
   providers,
   pages: {
