@@ -7,9 +7,7 @@ import React from 'react'
 const VideoCallComponent = ({roomID,name} : {roomID: string, name: string}) => {
   
   
-  const token = generateKitToken(roomID,
-    'user'
-  )
+  const token = generateKitToken(roomID, name)
   const zp = ZegoUIKitPrebuilt.create(token)
 
   const joinMeeting = (element:HTMLDivElement) => {

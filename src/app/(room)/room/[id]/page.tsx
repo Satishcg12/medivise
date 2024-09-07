@@ -9,10 +9,10 @@ const page = async ({params} : {params: {id: string}}) => {
   if (!session?.user) {
     return <div>unauthorized</div>
   }  
-  const {name}=session.user
+
   return (
     <div >
-      <VideoCallComponent roomID={params.id} name={name || 'user'}/>
+      <VideoCallComponent roomID={params.id} name={session?.user?.name || "user"} />
     </div>
   )
 }

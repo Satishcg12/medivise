@@ -5,7 +5,7 @@ import MobileNavSheet from "./MobileNavSheet";
 import { ModeToggle } from "./mode-toggle";
 import { UserDropdown } from "./UserDropdown";
 import { Logo } from "../Logo";
-import LoginAndRegister from "@/app/user/LoginAndRegister";
+import LoginAndRegister from "@/app/(normal)/user/LoginAndRegister";
 import { auth } from "@/auth";
 
 export async function Header() {
