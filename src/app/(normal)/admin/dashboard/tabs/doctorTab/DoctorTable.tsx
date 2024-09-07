@@ -39,16 +39,17 @@ function DoctorTable() {
     setDoctors(doctors.filter((doctor) => doctor.id !== key.toString()));
   };
 
+  const fetchDoctors = async () => {
+    try {
+      const response = await fetch("/api/doctor");
+      const data = await response.json();
+      console.log(data);
+      setDoctors(data.data);
+    } catch (error) {
+      console.error("Error fetching doctors: ", error);
+    }
+  };
   useEffect(() => {
-    const fetchDoctors = async () => {
-      try {
-        const response = await fetch("/api/doctor");
-        const data = await response.json();
-        setDoctors(data.data);
-      } catch (error) {
-        console.error("Error fetching doctors: ", error);
-      }
-    };
     fetchDoctors();
   }, []);
   return (
@@ -75,7 +76,7 @@ function DoctorTable() {
                 <TableRow key={doctor.id}>
                   <TableCell className="font-medium">
                     <Image
-                      src="/images/doctor_pic.png"
+                      src={`${doctor.image}`}
                       alt="doctor image"
                       width={40}
                       height={40}

@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { string } from "zod";
+import UserModel from "./UserModel";
 export interface Review{
   user_id: Schema.Types.ObjectId;
   doctor_id: Schema.Types.ObjectId;
@@ -24,7 +25,7 @@ export interface DoctorDetail {
 const ReviewSchema: Schema<Review>= new Schema({
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: UserModel.modelName,
     required: [true, "User ID is required"],
   },
   rating: {
@@ -49,7 +50,7 @@ const DoctorDetailSchema: Schema<DoctorDetail> = new Schema(
   {
     user_id: {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: UserModel.modelName,
       required: [true, "User ID is required"],
     },
     ceritificateUrl: {
