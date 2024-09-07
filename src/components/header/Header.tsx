@@ -5,6 +5,7 @@ import MobileNavSheet from "./MobileNavSheet";
 import { ModeToggle } from "./mode-toggle";
 import { UserDropdown } from "./UserDropdown";
 import { Logo } from "../Logo";
+import LoginAndRegister from "@/app/user/LoginAndRegister";
 
 export function Header() {
   return (
@@ -15,6 +16,7 @@ export function Header() {
 
       <div className="flex items-center gap-4 md:gap-2 lg:gap-4">
         <ModeToggle />
+        <LoginAndRegister />
         <UserDropdown />
         <MobileNavSheet />
       </div>
