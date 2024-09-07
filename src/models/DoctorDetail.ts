@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { string } from "zod";
 export interface Review{
   user_id: Schema.Types.ObjectId;
   doctor_id: Schema.Types.ObjectId;
@@ -12,9 +13,9 @@ export interface DoctorDetail {
   user_id: Schema.Types.ObjectId;
   ceritificateUrl: string;
   description: string;
-  specializations: string[];
-  qualifications: string[];
-  experience: number;
+  specializations: string;
+  qualifications: string;
+  experience: string;
   consultationFee: number;
   maxConsultationFee: number;
   reviews: Review[];
@@ -23,7 +24,7 @@ export interface DoctorDetail {
 const ReviewSchema: Schema<Review>= new Schema({
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: "users",
+    ref: "User",
     required: [true, "User ID is required"],
   },
   rating: {
@@ -43,11 +44,12 @@ const ReviewSchema: Schema<Review>= new Schema({
 },{
   timestamps: true,
 })
+
 const DoctorDetailSchema: Schema<DoctorDetail> = new Schema(
   {
     user_id: {
       type: Schema.Types.ObjectId,
-      ref: "users",
+      ref: "User",
       required: [true, "User ID is required"],
     },
     ceritificateUrl: {
@@ -59,15 +61,15 @@ const DoctorDetailSchema: Schema<DoctorDetail> = new Schema(
       required: [true, "Description is required"],
     },
     specializations: {
-      type: [String],
+      type:String,
       required: [true, "Specializations is required"],
     },
     qualifications: {
-      type: [String],
+      type: String,
       required: [true, "Qualifications is required"],
     },
     experience: {
-      type: Number,
+      type: String,
       required: [true, "Experience is required"],
     },
     consultationFee: {
@@ -86,8 +88,8 @@ const DoctorDetailSchema: Schema<DoctorDetail> = new Schema(
   }
 );
 
-const DoctorDetailModel =
+const DoctorDetail =
   (mongoose.models.DoctorDetail as mongoose.Model<DoctorDetail>) ||
-  mongoose.model<DoctorDetail>("doctorDetails", DoctorDetailSchema);
+  mongoose.model<DoctorDetail>("DoctorDetail", DoctorDetailSchema);
 
-export default DoctorDetailModel;
+export default DoctorDetail;

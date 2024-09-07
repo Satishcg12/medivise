@@ -1,27 +1,50 @@
-"use server"
+"use server";
 
-import { addDoctorSchema } from '@/schema/addDoctorSchema';
-export async function RegisterDoctor( formData :FormData) {
+import dbConnect from "@/lib/dbConnect";
+import DoctorDetailModel from "@/models/DoctorDetail";
+import UserModel from "@/models/UserModel";
+import { addDoctorSchema, doctorFormInterface } from "@/schema/addDoctorSchema";
+import { revalidatePath } from "next/cache";
 
-
-//   name: string;
-//   email: string;
-//   password: string;
-//   confirmPassword: string;
-//   image: string,
-//   ceritificateUrl: string;
-//   description: string;
-//   specializations: string[];
-//   qualifications: string[];
-//   experience: string;
-//   consultationFee: number;
-//   commission: number;
+export async function RegisterDoctor(formData: doctorFormInterface) {
   try {
-    const validateFormData =  await addDoctorSchema.parseAsync(formData);
+    const validateFormData = await addDoctorSchema.parseAsync(formData);
+    await dbConnect();
+    const existingUser = await UserModel.findOne({
+      email: validateFormData.email,
+    });
+    if (existingUser) {
+      return {
+        success: false,
+        message: "User already exists",
+      };
+    }
+    const doctor = await UserModel.create({
+      name: validateFormData.name,
+      email: validateFormData.email,
+      password: validateFormData.password,
+      image: validateFormData.image,
+      role: "doctor",
+    });
+    await doctor.save();
+    const doctorDetail = await DoctorDetailModel.create({
+      user_id: doctor._id,
+      ceritificateUrl: validateFormData.ceritificate,
+      description: validateFormData.description,
+      specializations: validateFormData.specializations,
+      qualifications: validateFormData.qualifications,
+      experience: validateFormData.experience,
+      consultationFee: validateFormData.consultationFee,
+      maxConsultationFee: validateFormData.consultationFee,
+    });
+    await doctorDetail.save();
+    revalidatePath("/admin/dashboard");
 
-    console.log(validateFormData);
-    
+    return {
+      success: true,
+      message: "Doctor added successfully",
+    };
   } catch (error) {
-    throw error;
+    return { error: error };
   }
 }
