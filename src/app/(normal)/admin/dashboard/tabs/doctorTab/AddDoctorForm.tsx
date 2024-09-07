@@ -23,6 +23,7 @@ import {
 import { Loader2 } from "lucide-react";
 import { z } from "zod";
 import { UploadButton, UploadDropzone } from "@/app/utils/uploadthings";
+import { RegisterDoctor } from "../../action";
 
 export default function AddDoctorForm() {
   const form = useForm<z.infer<typeof addDoctorSchema>>({
@@ -46,7 +47,13 @@ export default function AddDoctorForm() {
   const onSubmit = async (data: z.infer<typeof addDoctorSchema>) => {
     // Simulate asynchronous submission (e.g., API call)
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log(data); // Handle form submission logic here
+    const res = await RegisterDoctor(data);
+    if (res.success) {
+      alert("Doctor Added Successfully");
+    }else{
+      alert("Doctor Not Added");
+    }
+    
   };
 
   return (
@@ -208,7 +215,8 @@ export default function AddDoctorForm() {
                 <FormItem>
                   <FormLabel>Image</FormLabel>
                   <FormControl>
-                    <UploadButton disabled={form.watch("image") !== ""}
+                    <UploadButton
+                      disabled={form.watch("image") !== ""}
                       className="*:w-full *:grayscale"
                       endpoint="imageUploader"
                       onClientUploadComplete={(res) => {
@@ -233,7 +241,8 @@ export default function AddDoctorForm() {
                 <FormItem>
                   <FormLabel>Certificate</FormLabel>
                   <FormControl>
-                    <UploadButton disabled={form.watch("ceritificate") !== ""}
+                    <UploadButton
+                      disabled={form.watch("ceritificate") !== ""}
                       className="*:w-full *:grayscale"
                       endpoint="imageUploader"
                       onClientUploadComplete={(res) => {

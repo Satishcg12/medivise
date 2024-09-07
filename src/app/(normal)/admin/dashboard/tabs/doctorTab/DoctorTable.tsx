@@ -27,6 +27,11 @@ import {
 import { Ellipsis } from "lucide-react";
 
 function DoctorTable() {
+  async function getDoctors() {
+    const response = await fetch("http://localhost:3000/api/doctors");
+    const data = await response.json();
+    console.log(data);
+  }
   return (
     <Card className="bg-muted/40 overflow-auto">
       <CardHeader>
