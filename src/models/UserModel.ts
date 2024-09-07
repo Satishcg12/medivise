@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 export interface User extends Document {
+    
   name: string;
   email: string;
   image: string;
@@ -45,6 +46,6 @@ const UserSchema: Schema<User> = new Schema(
 // const TodoModel = mongoose.models.Todo as mongoose.Model<Todo> || mongoose.model<Todo>("Todo", TodoSchema);
 const UserModel =
   (mongoose.models.User as mongoose.Model<User>) ||
-  mongoose.model<User>("User", UserSchema);
+  mongoose.model<User>("users", UserSchema);
 
 export default UserModel;
