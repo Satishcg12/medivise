@@ -23,16 +23,6 @@ import {
 import { Loader2 } from "lucide-react";
 import { z } from "zod";
 import { UploadButton, UploadDropzone } from "@/app/utils/uploadthings";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { doctorCategories } from "@/app/(normal)/doctor/DoctorCard";
-import { RegisterDoctor } from "../../action";
 
 export default function AddDoctorForm() {
   const form = useForm<z.infer<typeof addDoctorSchema>>({
@@ -53,17 +43,10 @@ export default function AddDoctorForm() {
     },
   });
 
-
   const onSubmit = async (data: z.infer<typeof addDoctorSchema>) => {
     // Simulate asynchronous submission (e.g., API call)
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    const res = await RegisterDoctor(data);
-    if (res.success) {
-      alert("Doctor Added Successfully");
-    }else{
-      alert("Doctor Not Added");
-    }
-    
+    console.log(data); // Handle form submission logic here
   };
 
   return (
@@ -134,26 +117,28 @@ export default function AddDoctorForm() {
             />
             <FormField
               control={form.control}
+              name="description"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Description</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Doctor's description" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="specializations"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Specializations</FormLabel>
                   <FormControl>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Specialization" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {doctorCategories.map((category) => (
-                          <SelectItem key={category} value={category}>
-                            {category}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <Input
+                      placeholder="E.g., Cardiologist, Dermatologist"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -176,7 +161,7 @@ export default function AddDoctorForm() {
               control={form.control}
               name="experience"
               render={({ field }) => (
-                <FormItem className="md:col-span-2">
+                <FormItem>
                   <FormLabel>Experience (Years)</FormLabel>
                   <FormControl>
                     <Input placeholder="X months/years" {...field} />
@@ -223,8 +208,7 @@ export default function AddDoctorForm() {
                 <FormItem>
                   <FormLabel>Image</FormLabel>
                   <FormControl>
-                    <UploadButton
-                      disabled={form.watch("image") !== ""}
+                    <UploadButton disabled={form.watch("image") !== ""}
                       className="*:w-full *:grayscale"
                       endpoint="imageUploader"
                       onClientUploadComplete={(res) => {
@@ -249,8 +233,7 @@ export default function AddDoctorForm() {
                 <FormItem>
                   <FormLabel>Certificate</FormLabel>
                   <FormControl>
-                    <UploadButton
-                      disabled={form.watch("ceritificate") !== ""}
+                    <UploadButton disabled={form.watch("ceritificate") !== ""}
                       className="*:w-full *:grayscale"
                       endpoint="imageUploader"
                       onClientUploadComplete={(res) => {
@@ -261,24 +244,6 @@ export default function AddDoctorForm() {
                       onUploadError={(error: Error) => {
                         alert(`ERROR! ${error.message}`);
                       }}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="description"
-              render={({ field }) => (
-                <FormItem className="md:col-span-2">
-                  <FormLabel>Description</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Doctor's Description"
-                      className="min-h-[9.5rem]"
-                      {...field}
                     />
                   </FormControl>
                   <FormMessage />

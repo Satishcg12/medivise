@@ -57,7 +57,7 @@ function DoctorTable() {
       <CardHeader>
         <CardTitle>Doctor Table</CardTitle>
         <CardDescription>
-          A list of all the doctors in your clinic.
+          A list of all the doctors.
         </CardDescription>
       </CardHeader>
       <CardContent className="px-2">
