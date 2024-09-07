@@ -1,29 +1,19 @@
-'use client'
-
-import { generateKitToken } from '@/utils/zego'
-import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt'
 import React from 'react'
+import VideoCallComponent from './VideocallComponent'
+import { auth } from '@/auth'
+import { redirect } from 'next/navigation'
 
-const page = ({params} : {params: {id: string}}) => {
+const page = async ({params} : {params: {id: string}}) => {
   
-  
-  const token = generateKitToken(params.id,
-    'user'
-  )
-  const zp = ZegoUIKitPrebuilt.create(token)
-
-  const joinMeeting = (element:HTMLDivElement) => {
-    zp.joinRoom({
-      container: element,
-      scenario: {
-        mode: ZegoUIKitPrebuilt.VideoConference
-      }
-    })
-  }
-
+  const session = await auth();
+  if (!session?.user) {
+    return <div>unauthorized</div>
+  }  
+  const {name}=session.user
   return (
-    <div ref={joinMeeting} className="h-screen"
-    >page</div>
+    <div >
+      <VideoCallComponent roomID={params.id} name={name || 'user'}/>
+    </div>
   )
 }
 
