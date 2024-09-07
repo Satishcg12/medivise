@@ -33,7 +33,7 @@ export default function AddDoctorForm() {
       password: "",
       confirmPassword: "",
       image: "",
-      ceritificateUrl: "",
+      ceritificate: "",
       description: "",
       specializations: [],
       qualifications: [],
@@ -110,31 +110,6 @@ export default function AddDoctorForm() {
                   <FormLabel>Confirm Password</FormLabel>
                   <FormControl>
                     <Input type="password" placeholder="********" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <UploadButton
-              endpoint="imageUploader"
-              onClientUploadComplete={(res) => {
-                // Do something with the response
-                console.log("Files: ", res);
-                alert("Upload Completed");
-              }}
-              onUploadError={(error: Error) => {
-                // Do something with the error.
-                alert(`ERROR! ${error.message}`);
-              }}
-            />
-            <FormField
-              control={form.control}
-              name="ceritificateUrl"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Certificate URL</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Certificate URL" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -225,6 +200,70 @@ export default function AddDoctorForm() {
                 </FormItem>
               )}
             />
+
+            <FormField
+              control={form.control}
+              name="image"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Image</FormLabel>
+                  <FormControl>
+                    <UploadButton disabled={form.watch("image") !== ""}
+                      className="*:w-full *:grayscale"
+                      endpoint="imageUploader"
+                      onClientUploadComplete={(res) => {
+                        console.log("Files: ", res);
+                        alert("Upload Completed");
+                        field.onChange(res[0].url);
+                      }}
+                      onUploadError={(error: Error) => {
+                        alert(`ERROR! ${error.message}`);
+                      }}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="ceritificate"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Certificate</FormLabel>
+                  <FormControl>
+                    <UploadButton disabled={form.watch("ceritificate") !== ""}
+                      className="*:w-full *:grayscale"
+                      endpoint="imageUploader"
+                      onClientUploadComplete={(res) => {
+                        console.log("Files: ", res);
+                        alert("Upload Completed");
+                        field.onChange(res[0].url);
+                      }}
+                      onUploadError={(error: Error) => {
+                        alert(`ERROR! ${error.message}`);
+                      }}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* <UploadButton
+              className="*:w-full"
+              endpoint="imageUploader"
+              onClientUploadComplete={(res) => {
+                // Do something with the response
+                console.log("Files: ", res);
+                alert("Upload Completed");
+              }}
+              onUploadError={(error: Error) => {
+                // Do something with the error.
+                alert(`ERROR! ${error.message}`);
+              }}
+            /> */}
             <Button
               type="submit"
               disabled={form.formState.isSubmitting}
