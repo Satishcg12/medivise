@@ -1,7 +1,6 @@
 import { auth, signIn } from "@/auth";
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
-import { login } from "./action";
 import { Button } from "@/components/ui/button";
 
 function GoogleIcon() {
@@ -17,16 +16,8 @@ function GoogleIcon() {
 }
 
 async function LoginAndRegister() {
-async function LoginAndRegister() {
   const session = await auth();
   const user = session?.user;
-  if (user?.email) return <></>;
-  else
-    return (
-      <>
-        <form
-          action={async () => {
-            "use server";
   if (user?.email) return <></>;
   else
     return (
@@ -60,7 +51,7 @@ async function LoginAndRegister() {
               // https://nextjs.org/docs/app/api-reference/functions/redirect#server-component
               throw error;
             }
-          }}
+          }}}
         >
           <Button variant="secondary" className="gap-2">
             <GoogleIcon />
@@ -71,4 +62,4 @@ async function LoginAndRegister() {
     );
 }
 
-export default LoginAndRegister;
+export default LoginAndRegister
