@@ -32,6 +32,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { doctorCategories } from "@/app/(normal)/doctor/DoctorCard";
+import { RegisterDoctor } from "../../action";
 
 export default function AddDoctorForm() {
   const form = useForm<z.infer<typeof addDoctorSchema>>({
@@ -51,6 +52,7 @@ export default function AddDoctorForm() {
       commission: 0,
     },
   });
+
 
   const onSubmit = async (data: z.infer<typeof addDoctorSchema>) => {
     // Simulate asynchronous submission (e.g., API call)
@@ -223,8 +225,6 @@ export default function AddDoctorForm() {
                   <FormControl>
                     <UploadButton
                       disabled={form.watch("image") !== ""}
-                    <UploadButton
-                      disabled={form.watch("image") !== ""}
                       className="*:w-full *:grayscale"
                       endpoint="imageUploader"
                       onClientUploadComplete={(res) => {
@@ -249,8 +249,6 @@ export default function AddDoctorForm() {
                 <FormItem>
                   <FormLabel>Certificate</FormLabel>
                   <FormControl>
-                    <UploadButton
-                      disabled={form.watch("ceritificate") !== ""}
                     <UploadButton
                       disabled={form.watch("ceritificate") !== ""}
                       className="*:w-full *:grayscale"
