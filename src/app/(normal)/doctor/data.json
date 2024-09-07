@@ -1,0 +1,232 @@
+[
+  {
+      "name": "Dr. Anil Sharma",
+      "email": "anil.sharma@example.com",
+      "password": "anil123",
+      "description": "Experienced general physician with a focus on preventive care.",
+      "specialization": "General Physician",
+      "qualification": "MD",
+      "experience_years": 12,
+      "consultation_fee": 150
+  },
+  {
+      "name": "Dr. Binita Rai",
+      "email": "binita.rai@example.com",
+      "password": "binita456",
+      "description": "Specializes in internal medicine and patient care.",
+      "specialization": "General Physician",
+      "qualification": "MD",
+      "experience_years": 8,
+      "consultation_fee": 120
+  },
+  {
+      "name": "Dr. Chandra Gurung",
+      "email": "chandra.gurung@example.com",
+      "password": "chandra789",
+      "description": "Expert in family medicine and chronic disease management.",
+      "specialization": "General Physician",
+      "qualification": "MD",
+      "experience_years": 15,
+      "consultation_fee": 140
+  },
+  {
+      "name": "Dr. Deepak Patel",
+      "email": "deepak.patel@example.com",
+      "password": "deepak123",
+      "description": "Renowned cardiologist with extensive research background.",
+      "specialization": "Cardiologist",
+      "qualification": "MD",
+      "experience_years": 20,
+      "consultation_fee": 250
+  },
+  {
+      "name": "Dr. Esha Thapa",
+      "email": "esha.thapa@example.com",
+      "password": "esha456",
+      "description": "Focuses on cardiovascular health and interventions.",
+      "specialization": "Cardiologist",
+      "qualification": "MD",
+      "experience_years": 10,
+      "consultation_fee": 220
+  },
+  {
+      "name": "Dr. Prakash Joshi",
+      "email": "prakash.joshi@example.com",
+      "password": "prakash789",
+      "description": "Specializes in heart diseases and treatments.",
+      "specialization": "Cardiologist",
+      "qualification": "MD",
+      "experience_years": 18,
+      "consultation_fee": 240
+  },
+  {
+      "name": "Dr. Rina Shah",
+      "email": "rina.shah@example.com",
+      "password": "rina123",
+      "description": "Expertise in managing gastrointestinal disorders.",
+      "specialization": "Gastroenterologist",
+      "qualification": "MD",
+      "experience_years": 14,
+      "consultation_fee": 200
+  },
+  {
+      "name": "Dr. Santosh Karki",
+      "email": "santosh.karki@example.com",
+      "password": "santosh456",
+      "description": "Known for advanced endoscopic procedures and diagnostics.",
+      "specialization": "Gastroenterologist",
+      "qualification": "MD",
+      "experience_years": 12,
+      "consultation_fee": 190
+  },
+  {
+      "name": "Dr. Tara Bhattarai",
+      "email": "tara.bhattarai@example.com",
+      "password": "tara789",
+      "description": "Specialist in treating digestive system disorders.",
+      "specialization": "Gastroenterologist",
+      "qualification": "MD",
+      "experience_years": 16,
+      "consultation_fee": 210
+  },
+  {
+      "name": "Dr. Uma Dhakal",
+      "email": "uma.dhakal@example.com",
+      "password": "uma123",
+      "description": "Renowned dermatologist with a focus on skin cancer treatments.",
+      "specialization": "Dermatologist",
+      "qualification": "MD",
+      "experience_years": 22,
+      "consultation_fee": 230
+  },
+  {
+      "name": "Dr. Vijay Shrestha",
+      "email": "vijay.shrestha@example.com",
+      "password": "vijay456",
+      "description": "Expert in cosmetic dermatology and acne treatments.",
+      "specialization": "Dermatologist",
+      "qualification": "MD",
+      "experience_years": 8,
+      "consultation_fee": 180
+  },
+  {
+      "name": "Dr. Yashoda Neupane",
+      "email": "yashoda.neupane@example.com",
+      "password": "yashoda789",
+      "description": "Focuses on autoimmune skin conditions and dermatological surgery.",
+      "specialization": "Dermatologist",
+      "qualification": "MD",
+      "experience_years": 10,
+      "consultation_fee": 200
+  },
+  {
+      "name": "Dr. Arun Kumar",
+      "email": "arun.kumar@example.com",
+      "password": "arun123",
+      "description": "Skilled in neurological disorders and brain health.",
+      "specialization": "Neurologist",
+      "qualification": "MD",
+      "experience_years": 15,
+      "consultation_fee": 250
+  },
+  {
+      "name": "Dr. Bina Ghimire",
+      "email": "bina.ghimire@example.com",
+      "password": "bina456",
+      "description": "Specializes in epilepsy and neurodegenerative diseases.",
+      "specialization": "Neurologist",
+      "qualification": "MD",
+      "experience_years": 20,
+      "consultation_fee": 270
+  },
+  {
+      "name": "Dr. Chetan Maharjan",
+      "email": "chetan.maharjan@example.com",
+      "password": "chetan789",
+      "description": "Expert in stroke management and neurorehabilitation.",
+      "specialization": "Neurologist",
+      "qualification": "MD",
+      "experience_years": 12,
+      "consultation_fee": 260
+  },
+  {
+      "name": "Dr. Deepa Malla",
+      "email": "deepa.malla@example.com",
+      "password": "deepa123",
+      "description": "Specialist in eye care and vision correction.",
+      "specialization": "Ophthalmologist",
+      "qualification": "MD",
+      "experience_years": 14,
+      "consultation_fee": 220
+  },
+  {
+      "name": "Dr. Gaurav Yadav",
+      "email": "gaurav.yadav@example.com",
+      "password": "gaurav456",
+      "description": "Known for advanced cataract and laser eye surgery.",
+      "specialization": "Ophthalmologist",
+      "qualification": "MD",
+      "experience_years": 9,
+      "consultation_fee": 210
+  },
+  {
+      "name": "Dr. Isha Bhatta",
+      "email": "isha.bhatta@example.com",
+      "password": "isha789",
+      "description": "Expertise in treating retinal disorders and glaucoma.",
+      "specialization": "Ophthalmologist",
+      "qualification": "MD",
+      "experience_years": 11,
+      "consultation_fee": 230
+  },
+  {
+      "name": "Dr. Jitendra Adhikari",
+      "email": "jitendra.adhikari@example.com",
+      "password": "jitendra123",
+      "description": "Skilled in orthopedic surgeries and sports medicine.",
+      "specialization": "Orthopedist",
+      "qualification": "MD",
+      "experience_years": 18,
+      "consultation_fee": 240
+  },
+  {
+      "name": "Dr. Kiran Rathi",
+      "email": "kiran.rathi@example.com",
+      "password": "kiran456",
+      "description": "Expert in joint replacement and trauma surgery.",
+      "specialization": "Orthopedist",
+      "qualification": "MD",
+      "experience_years": 16,
+      "consultation_fee": 250
+  },
+  {
+      "name": "Dr. Laxmi Baral",
+      "email": "laxmi.baral@example.com",
+      "password": "laxmi789",
+      "description": "Specializes in pediatric orthopedics and limb deformities.",
+      "specialization": "Orthopedist",
+      "qualification": "MD",
+      "experience_years": 12,
+      "consultation_fee": 220
+  },
+  {
+      "name": "Dr. Manisha Koirala",
+      "email": "manisha.koirala@example.com",
+      "password": "manisha123",
+      "description": "Expert in child health and pediatric care.",
+      "specialization": "Pediatrician",
+      "qualification": "MD",
+      "experience_years": 10,
+      "consultation_fee": 160
+  },
+  {
+      "name": "Dr. Nabin Rai",
+      "email": "nabin.rai@example.com",
+      "password": "nabin456",
+      "description": "Specializes in adolescent medicine and chronic conditions.",
+      "specialization": "Pediatrician",
+      "qualification": "MD",
+      "experience_years": null,
+      "consultation_fee": null
+  }
+]
