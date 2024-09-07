@@ -8,4 +8,5 @@ type DoctoreData = {
   commissionRate: string;
   experience: string;
   qualifications: string;
+  
 };

@@ -4,7 +4,20 @@ export async function POST(req: Request) {
   try {
     // GET DESCRIPTION
     const { description } = await req.json();
-    console.log(description);
+    if (!description) {
+      return Response.json(
+        {
+          success: false,
+          message: "Description not found",
+          data: null,
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+    
+    
 
     // Access your API key as an environment variable
     if (!process.env.GOOGLE_GEMINI_API_KEY) {
