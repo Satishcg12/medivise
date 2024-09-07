@@ -1,9 +1,21 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { redirect, useRouter } from "next/navigation";
+import {  useState } from "react";
 
 
 export const HeroSection = () => {
+  const [message, setMessage] = useState("");
+  const router = useRouter();
+  const sendToPage = (msg: string) => {
+    
+    const url = `/doctor?query=${msg}`;
+    router.push(url);
+  }
+
   return (
     <section className="relative space-y-4 flex flex-col items-center justify-center mx-auto h-[80dvh] w-full md:max-w-screen-md">
       <div className="space-y-6 mb-8">
@@ -14,7 +26,10 @@ export const HeroSection = () => {
           "Everyone gives advice, but not everyone’s an expert."
         </p>
       </div>
+
       <Textarea
+        onChange={(e) => setMessage(e.target.value)}
+        value={message}
         placeholder="Describe your symptoms or ask a question..."
         id="message"
         aria-label="Describe your symptoms or ask a question..."
@@ -25,7 +40,7 @@ export const HeroSection = () => {
         <p className="text-sm text-muted-foreground">
           3 free credits remaining
         </p>
-        <Button onClick={() => console.log("Ask Morphic")}>
+        <Button onClick={() => sendToPage(message)} className="flex items-center">
           <Sparkles className="mr-2 h-4 w-4" />
           Find Doctors
         </Button>
@@ -37,7 +52,7 @@ export const HeroSection = () => {
           "What are the symptoms of COVID-19?",
           "How do I know if I have a cold or the flu?",
         ].map((query, index) => (
-          <Button key={index} variant="ghost" className="justify-start w-fit">
+          <Button key={index} variant="ghost" onClick={()=> sendToPage(query)} className="justify-start w-fit">
             <ArrowRight className="mr-2 h-4 w-4" />
             {query}
           </Button>
