@@ -18,14 +18,14 @@ export async function UserDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="secondary" size="icon">
+        <Button variant="secondary" size="icon" className={`${user?.image ? "p-0 overflow-hidden" : ""} `}>
           {user?.image ? (
             <Image
               src={`${user?.image}`}
               alt="profile image"
               width={10}
               height={10}
-              className="h-5 w-5"
+              className="size-full"
             />
           ) : (
             <CircleUser className="h-5 w-5" />
