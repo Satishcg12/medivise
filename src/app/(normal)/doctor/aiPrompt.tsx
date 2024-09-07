@@ -28,7 +28,9 @@ import {
 } from "@/components/ui/form";
 import { Badge } from "@/components/ui/badge";
 
-export default function AiPrompt() {
+import { Dispatch, SetStateAction } from "react";
+
+export default function AiPrompt({ data }: { data: any }) {
   const form = useForm<z.infer<typeof AiPromptSchema>>({
     resolver: zodResolver(AiPromptSchema),
     defaultValues: {
@@ -43,7 +45,9 @@ export default function AiPrompt() {
     console.log(values);
   }
   return (
-    <div className="hidden md:flex md:w-[24rem] shrink-0 sticky top-20 h-fit"> {/* Added sticky positioning */}
+    <div className="hidden md:flex md:w-[24rem] shrink-0 sticky top-20 h-fit">
+      {" "}
+      {/* Added sticky positioning */}
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -74,48 +78,35 @@ export default function AiPrompt() {
               </FormItem>
             )}
           />
-
-            <div className="flex items-start gap-3 flex-1">
+          <div className="flex items-start gap-3 flex-1">
             <Sparkles className="size-5 text-primary shrink-0 animate-pulse" />
             <p className="pr-3 text-sm overflow-y-scroll max-h-[50dvh] text-justify">
-              This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model.
-              Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model. Please provide a
-              brief description of your symptoms. This feature is powered by OpenAI's GPT-3 model.
+              {suggest?.length > 0 ? suggest : "Get ai suggestions here"}
             </p>
           </div>
 
           {/* Ensure this container is flex and pushes the textarea to the bottom */}
-            <FormField
-              control={form.control}
-              name="prompt"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Describe your symptoms..."
-                      className="resize-none"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <FormField
+            control={form.control}
+            name="prompt"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Textarea
+                    placeholder="Describe your symptoms..."
+                    className="resize-none"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-            <Button className="ml-auto gap-2">
-              <Sparkles className="size-4" />
-              Analyze Symptoms
-            </Button>
+          <Button className="ml-auto gap-2">
+            <Sparkles className="size-4" />
+            Analyze Symptoms
+          </Button>
         </form>
       </Form>
     </div>
