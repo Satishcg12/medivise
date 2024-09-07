@@ -9,12 +9,13 @@ interface Tab {
 
 function TabMenus({ children }: { children?: React.ReactNode }) {
   const tabs: Tab[] = [
-    { label: "doctor management", Component: Doctor },
-    { label: "user management", Component: User },
+    { label: "about", Component: Doctor },
+    { label: "appointment", Component: Doctor },
+    { label: "user", Component: User },
   ];
 
   return (
-    <Tabs defaultValue="doctor management" className="space-y-4 lg:space-y-6">
+    <Tabs defaultValue="about" className="space-y-4 lg:space-y-6">
       <div className="flex flex-col sm:flex-row max-sm:gap-5 items-center justify-center mb-5 gap-4">
         <TabsList>
           {tabs.map(({ label }) => (
@@ -23,6 +24,7 @@ function TabMenus({ children }: { children?: React.ReactNode }) {
             </TabsTrigger>
           ))}
         </TabsList>
+
         {/* If children should be rendered outside the tab content, it can be placed here */}
         {children}
       </div>

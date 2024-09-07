@@ -32,11 +32,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-function DoctorTable() {
-  const [doctors, setDoctors] = useState([
+function UserTable() {
+  const [users, setUsers] = useState([
     {
       id: 1,
-      image: "/images/doctor_pic.png",
+      image: "/images/user_pic.png",
       name: "Name",
       email: "Email",
       specialization: "Specialization",
@@ -45,19 +45,19 @@ function DoctorTable() {
       experience: "Experience",
       qualifications: "Qualifications",
     },
-    // Add more doctor objects as needed
+    // Add more user objects as needed
   ]);
 
   const deleteTableRow = (key: number) => {
-    setDoctors(doctors.filter((doctor) => doctor.id !== key));
+    setUsers(users.filter((user) => user.id !== key));
   };
 
   return (
-    <Card className="bg-muted/40 overflow-auto">
+    <Card className="bg-muted/40 overflow-auto md:w-1/2">
       <CardHeader>
-        <CardTitle>Doctor Table</CardTitle>
+        <CardTitle>User Table</CardTitle>
         <CardDescription>
-          A list of all the doctors.
+          A list of all the users.
         </CardDescription>
       </CardHeader>
       <CardContent className="px-2">
@@ -71,12 +71,12 @@ function DoctorTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {doctors.map((doctor) => (
+            {users.map((user) => (
               <TableRow key={1}>
                 <TableCell className="font-medium">
                   <Image
                     src="/images/doctor_pic.png"
-                    alt="doctor image"
+                    alt="user image"
                     width={40}
                     height={40}
                     className="w-full rounded-full object-cover object-center"
@@ -126,13 +126,13 @@ function DoctorTable() {
           </TableBody>
         </Table>
       </CardContent>
-      {doctors.length === 0 && (
+      {users.length === 0 && (
         <CardFooter className="justify-center">
-          <Badge variant="outline">No doctors available. Add a doctor to get started.</Badge>
+          <Badge variant="outline">No users available. Add a user to get started.</Badge>
         </CardFooter>
       )}
     </Card>
   );
 }
 
-export default DoctorTable;
+export default UserTable;

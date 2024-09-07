@@ -17,10 +17,15 @@ function DashboardPage() {
         <h3 className="text-center font-manrope font-bold text-3xl leading-10 text-gray-900">
           Jenny Wilson
         </h3>
-        <Badge>Admin Account</Badge>
+        <Badge>Doctor Account</Badge>
       </div>
       <div>
-        <TabMenus />
+        <TabMenus>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" className="h-10">Edit Profile</Button>
+          <Button className="h-10">Book a Session</Button>
+        </div>
+          </TabMenus>
       </div>
     </>
   );
