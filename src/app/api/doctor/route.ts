@@ -53,7 +53,7 @@ export async function GET(req: Request) {
       {
         success: false,
         message: "Error generating content: " + error,
-        // date
+        date:null
       },
       {
         status: 500,
