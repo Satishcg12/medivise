@@ -24,7 +24,7 @@ export interface DoctorDetail {
 const ReviewSchema: Schema<Review>= new Schema({
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: "users",
+    ref: "User",
     required: [true, "User ID is required"],
   },
   rating: {
@@ -49,7 +49,7 @@ const DoctorDetailSchema: Schema<DoctorDetail> = new Schema(
   {
     user_id: {
       type: Schema.Types.ObjectId,
-      ref: "users",
+      ref: "User",
       required: [true, "User ID is required"],
     },
     ceritificateUrl: {

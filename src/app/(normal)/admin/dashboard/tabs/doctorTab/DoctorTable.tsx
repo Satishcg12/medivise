@@ -28,30 +28,29 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Ellipsis } from "lucide-react";
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 function DoctorTable() {
-  const [doctors, setDoctors] = useState([
-    {
-      id: 1,
-      image: "/images/doctor_pic.png",
-      name: "Name",
-      email: "Email",
-      specialization: "Specialization",
-      consultation: "Consultation",
-      commissionRate: "Commission Rate",
-      experience: "Experience",
-      qualifications: "Qualifications",
-    },
-    // Add more doctor objects as needed
-  ]);
+  const [doctors, setDoctors] = useState<DoctoreData[]>([]);
 
   const deleteTableRow = (key: number) => {
-    setDoctors(doctors.filter((doctor) => doctor.id !== key));
+    setDoctors(doctors.filter((doctor) => doctor.id !== key.toString()));
   };
 
+  useEffect(() => {
+    const fetchDoctors = async () => {
+      try {
+        const response = await fetch("/api/doctor");
+        const data = await response.json();
+        setDoctors(data.data);
+      } catch (error) {
+        console.error("Error fetching doctors: ", error);
+      }
+    };
+    fetchDoctors();
+  }, []);
   return (
     <Card className="bg-muted/40 overflow-auto">
       <CardHeader>
@@ -71,66 +70,71 @@ function DoctorTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {doctors.map((doctor) => (
-              <TableRow key={1}>
-                <TableCell className="font-medium">
-                  <Image
-                    src="/images/doctor_pic.png"
-                    alt="doctor image"
-                    width={40}
-                    height={40}
-                    className="w-full rounded-full object-cover object-center"
-                  />
-                </TableCell>
-                <TableCell>
-                  <p>Name</p>
-                  <p>Email</p>
-                  <p>Specialization</p>
-                </TableCell>
-                <TableCell>
-                  <p>Consultation</p>
-                  <p>Commision Rate</p>
-                </TableCell>
-                <TableCell>
-                  <p>Experience</p>
-                  <p>Qualifications</p>
-                </TableCell>
-                <TableCell>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger>
-                      <Ellipsis className="w-6 h-6" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      <DropdownMenuItem className="p-0">
-                        <Button
-                          onClick={() => deleteTableRow(1)}
-                          variant="ghost"
-                          className="justify-start w-full"
-                        >
-                          Delete
-                        </Button>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem className="p-0">
-                        <Button
-                          variant="ghost"
-                          className="justify-start w-full"
-                        >
-                          Edit
-                        </Button>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+            {doctors.length > 0 ? (
+              doctors.map((doctor) => (
+                <TableRow key={doctor.id}>
+                  <TableCell className="font-medium">
+                    <Image
+                      src="/images/doctor_pic.png"
+                      alt="doctor image"
+                      width={40}
+                      height={40}
+                      className="w-full rounded-full object-cover object-center"
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <p>{doctor.name}</p>
+                    <p>{doctor.email}</p>
+                    <p>{doctor.specialization}</p>
+                  </TableCell>
+                  <TableCell>
+                    <p>{doctor.consultation}</p>
+                    <p>{doctor.commissionRate}%</p>
+                  </TableCell>
+                  <TableCell>
+                    <p>{doctor.experience}</p>
+                    <p>{doctor.qualifications}</p>
+                  </TableCell>
+                  <TableCell>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger>
+                        <Ellipsis className="w-6 h-6" />
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent>
+                        <DropdownMenuItem className="p-0">
+                          <Button
+                            onClick={() => deleteTableRow(1)}
+                            variant="ghost"
+                            className="justify-start w-full"
+                          >
+                            Delete
+                          </Button>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="p-0">
+                          <Button
+                            variant="ghost"
+                            className="justify-start w-full"
+                          >
+                            Edit
+                          </Button>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={5} className="text-center">
+                  <Badge variant="outline">
+                    No doctors available. Add a doctor to get started.
+                  </Badge>
                 </TableCell>
               </TableRow>
-            ))}
+            )}
           </TableBody>
         </Table>
       </CardContent>
-      {doctors.length === 0 && (
-        <CardFooter className="justify-center">
-          <Badge variant="outline">No doctors available. Add a doctor to get started.</Badge>
-        </CardFooter>
-      )}
     </Card>
   );
 }
