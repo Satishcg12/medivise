@@ -122,7 +122,7 @@ function DoctorCard({data} : {data: any}) {
                   Rs {(doctor.consultation_fee * 1.13).toFixed(2)}
                 </Button>
                 <Button className="flex-1" asChild>
-                  <Link href={`/doctor/booking/${index}`}>
+                  <Link href={`/doctor/booking`}>
                     <span>Book Now</span>
                   </Link>
                 </Button>

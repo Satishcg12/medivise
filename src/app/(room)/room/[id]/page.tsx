@@ -6,9 +6,6 @@ import { redirect } from 'next/navigation'
 const page = async ({params} : {params: {id: string}}) => {
   
   const session = await auth();
-  if (!session?.user) {
-    return <div>unauthorized</div>
-  }  
 
   return (
     <div >

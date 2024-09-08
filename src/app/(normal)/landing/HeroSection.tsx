@@ -12,7 +12,7 @@ export const HeroSection = () => {
   const router = useRouter();
   const sendToPage = (msg: string) => {
     
-    const url = `/doctor?query=${msg}`;
+    const url = `/doctor?prompt=${msg}`;
     router.push(url);
   }
 
