@@ -1,6 +1,7 @@
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "@/components/ui/tabs";
-import Doctor from "./tabs/doctorTab/Doctor";
-import User from "./tabs/userTab/UserTable";
+import ScheduleForm from "./tabs/ScheduleTab/scheduleForm";
+import aboutDoctor from "./tabs/AboutTab/aboutDoctor";
+import AppointmentGrid from "./tabs/AppointmentTab/AppointmentGrid";
 
 interface Tab {
   label: string;
@@ -9,12 +10,13 @@ interface Tab {
 
 function TabMenus({ children }: { children?: React.ReactNode }) {
   const tabs: Tab[] = [
-    { label: "doctor management", Component: Doctor },
-    { label: "user management", Component: User },
+    { label: "about me", Component: aboutDoctor },
+    { label: "appointment", Component: AppointmentGrid },
+    { label: "schedule", Component: ScheduleForm },
   ];
 
   return (
-    <Tabs defaultValue="doctor management" className="space-y-4 lg:space-y-6">
+    <Tabs defaultValue="about me" className="space-y-4 lg:space-y-6">
       <div className="flex flex-col sm:flex-row max-sm:gap-5 items-center justify-center mb-5 gap-4">
         <TabsList>
           {tabs.map(({ label }) => (
@@ -23,6 +25,7 @@ function TabMenus({ children }: { children?: React.ReactNode }) {
             </TabsTrigger>
           ))}
         </TabsList>
+
         {/* If children should be rendered outside the tab content, it can be placed here */}
         {children}
       </div>

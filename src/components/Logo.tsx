@@ -14,7 +14,7 @@ export function Logo() {
           priority
           className="w-8"
         />
-        <h1>Medivice</h1>
+        <h1>Medivise</h1>
       </Link>
     </>
   );

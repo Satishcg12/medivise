@@ -9,7 +9,7 @@ import UserModel from "./models/UserModel";
 import { User } from "lucide-react";
 import { doctorLoginSchema } from "./schema/doctorLoginSchema";
 
-const ADMIN_EMAILS = ["sung20700@gmail.com","visionrayyan60517@gmail.com"];
+const ADMIN_EMAILS = ["Visionrayyan60517@gmail.com"];
 
 const providers: Provider[] = [
   Credentials({
@@ -101,7 +101,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
   },
   session: {  
-    strategy: "jwt",
+    strategy: "database",
   },
   secret: process.env.AUTH_SECRET,
 });

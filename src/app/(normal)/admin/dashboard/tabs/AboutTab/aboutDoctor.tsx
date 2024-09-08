@@ -6,7 +6,7 @@ function aboutDoctor() {
     <section className="p-6 bg-muted rounded-lg grid gap-8 md:grid-cols-2 lg:gap-12">
       <div className="flex flex-col items-center md:items-start">
         <h2 className="text-3xl font-bold text-center md:text-left">
-          About Dr. Jane Doe
+          About Dr. Satish Chaudhary
         </h2>
         <p className="mt-4 text-gray-600 text-center md:text-left">
           Dr. Jane Doe is a highly experienced pediatrician with over 15 years
