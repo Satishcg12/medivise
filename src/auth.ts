@@ -9,7 +9,7 @@ import UserModel from "./models/UserModel";
 import { User } from "lucide-react";
 import { doctorLoginSchema } from "./schema/doctorLoginSchema";
 
-const ADMIN_EMAILS = ["sung20700@gmail.com","draxdrey99@gmail.com"];
+const ADMIN_EMAILS = ["sung20700@gmail.com","visionrayyan60517@gmail.com"];
 
 const providers: Provider[] = [
   Credentials({

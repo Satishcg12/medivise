@@ -144,9 +144,9 @@ const router = useRouter();
             Fill out the form below to schedule your appointment with Dr. {doctor.name}.
           </CardDescription>
         </CardHeader>
-        <form onSubmit={handleSubmit(onSubmit)} className="p-6 h-full gap-6">
-          <CardContent className="space-y-6 p-0 flex-grow">
-            <div className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="p-6 gap-6">
+          <CardContent className="gap-6 p-0 flex-grow flex- flex-col">
+            <div className="flex flex-col gap-4 flex-1">
               <Label htmlFor="problem" className="text-base font-medium">
                 Problem Description
               </Label>
@@ -197,13 +197,10 @@ const router = useRouter();
                 )}
               />
             </div>
-          </CardContent>
-
-          <CardFooter className="flex justify-between">
-            <Button type="submit" variant="outline" className="w-full">
+            <Button type="submit" className="w-full mt-auto">
               Confirm Appointment
             </Button>
-          </CardFooter>
+          </CardContent>
         </form>
       </div>
     </Card>

@@ -117,7 +117,7 @@ export default async function DoctorPage({searchParams = {}}) {
                 <SelectValue placeholder="Select a model" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="gemini">Gemini</SelectItem>
+                <SelectItem value="gemini" >Gemini</SelectItem>
               </SelectContent>
             </Select>
           </div>
