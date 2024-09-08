@@ -1,232 +1,422 @@
-[
+{ "doctors" :[
   {
-      "name": "Dr. Anil Sharma",
-      "email": "anil.sharma@example.com",
-      "password": "anil123",
-      "description": "Experienced general physician with a focus on preventive care.",
-      "specialization": "General Physician",
-      "qualification": "MD",
-      "experience_years": 12,
-      "consultation_fee": 150
+    "name": "Dr. Anil Sharma",
+    "email": "anil.sharma@example.com",
+    "password": "anil123",
+    "description": "Experienced general physician with a focus on preventive care.",
+    "specialization": "General Physician",
+    "qualification": "MD",
+    "experience_years": 12,
+    "consultation_fee": 150,
+    "image": "https://img.freepik.com/free-photo/portrait-experienced-professional-therapist-with-stethoscope-looking-camera_1098-19305.jpg"
   },
   {
-      "name": "Dr. Binita Rai",
-      "email": "binita.rai@example.com",
-      "password": "binita456",
-      "description": "Specializes in internal medicine and patient care.",
-      "specialization": "General Physician",
-      "qualification": "MD",
-      "experience_years": 8,
-      "consultation_fee": 120
+    "name": "Dr. Binita Rai",
+    "email": "binita.rai@example.com",
+    "password": "binita456",
+    "description": "Specializes in internal medicine and patient care.",
+    "specialization": "General Physician",
+    "qualification": "MD",
+    "experience_years": 8,
+    "consultation_fee": 120,
+    "image": "https://img.freepik.com/free-photo/portrait-male-doctor-special-equipment_23-2148980809.jpg"
   },
   {
-      "name": "Dr. Chandra Gurung",
-      "email": "chandra.gurung@example.com",
-      "password": "chandra789",
-      "description": "Expert in family medicine and chronic disease management.",
-      "specialization": "General Physician",
+    "name": "Dr. Chandra Gurung",
+    "email": "chandra.gurung@example.com",
+    "password": "chandra789",
+    "description": "Expert in family medicine and chronic disease management.",
+    "specialization": "General Physician",
+    "qualification": "MD",
+    "experience_years": 15,
+    "consultation_fee": 140,
+    "image": "https://img.freepik.com/premium-photo/old-male-doctor-his-office_23-2148947614.jpg"
+  },
+  {
+    "name": "Dr. Deepak Patel",
+    "email": "deepak.patel@example.com",
+    "password": "deepak123",
+    "description": "Renowned cardiologist with extensive research background.",
+    "specialization": "Cardiologist",
+    "qualification": "MD",
+    "experience_years": 20,
+    "consultation_fee": 250,
+    "image": "https://img.freepik.com/free-photo/doctor-offering-medical-teleconsultation_23-2149328998.jpg?t=st=1725757128~exp=1725760728~hmac=6e6c2c91dabab45bf9cd5013ba143d411a864085a5af2955f074f21a886029d2&w=996"
+  },
+  {
+    "name": "Dr. Esha Thapa",
+    "email": "esha.thapa@example.com",
+    "password": "esha456",
+    "description": "Focuses on cardiovascular health and interventions.",
+    "specialization": "Cardiologist",
+    "qualification": "MD",
+    "experience_years": 10,
+    "consultation_fee": 220,
+    "image": "https://img.freepik.com/free-photo/doctors-day-handsome-brunette-cute-guy-medical-gown-with-crossed-hands_140725-162942.jpg?t=st=1725757163~exp=1725760763~hmac=241efeac0a43533f2ec83e47e1d8d974c39ba05ef6a296f46ac8d65c8165dd7d&w=996"
+  },
+  {
+    "name": "Dr. Prakash Joshi",
+    "email": "prakash.joshi@example.com",
+    "password": "prakash789",
+    "description": "Specializes in heart diseases and treatments.",
+    "specialization": "Cardiologist",
+    "qualification": "MD",
+    "experience_years": 18,
+    "consultation_fee": 240,
+    "image": "https://img.freepik.com/premium-photo/male-female-doctor-portrait-healthcare-medical-staff-concept-confident-doctor-portrait_71956-34070.jpg"
+  },
+  {
+    "name": "Dr. Rina Shah",
+    "email": "rina.shah@example.com",
+    "password": "rina123",
+    "description": "Expertise in managing gastrointestinal disorders.",
+    "specialization": "Gastroenterologist",
+    "qualification": "MD",
+    "experience_years": 14,
+    "consultation_fee": 200,
+    "image": "https://img.freepik.com/premium-photo/indian-female-doctor-portrait-aganist-hospital_151013-1234.jpg"
+  },
+  {
+    "name": "Dr. Santosh Karki",
+    "email": "santosh.karki@example.com",
+    "password": "santosh456",
+    "description": "Known for advanced endoscopic procedures and diagnostics.",
+    "specialization": "Gastroenterologist",
+    "qualification": "MD",
+    "experience_years": 12,
+    "consultation_fee": 190,
+    "image": "https://img.freepik.com/premium-photo/portrait-middle-aged-female-doctor_255667-25025.jpg?w=360"
+  },
+  {
+    "name": "Dr. Tara Bhattarai",
+    "email": "tara.bhattarai@example.com",
+    "password": "tara789",
+    "description": "Specialist in treating digestive system disorders.",
+    "specialization": "Gastroenterologist",
+    "qualification": "MD",
+    "experience_years": 16,
+    "consultation_fee": 210,
+    "image": "https://img.freepik.com/premium-photo/smiling-female-doctor_1139464-218.jpg"
+  },
+  {
+    "name": "Dr. Uma Dhakal",
+    "email": "uma.dhakal@example.com",
+    "password": "uma123",
+    "description": "Renowned dermatologist with a focus on skin cancer treatments.",
+    "specialization": "Dermatologist",
+    "qualification": "MD",
+    "experience_years": 22,
+    "consultation_fee": 230,
+    "image": "https://img.freepik.com/premium-photo/female-doctor-hospital_1139464-213.jpg"
+  },
+  {
+    "name": "Dr. Vijay Shrestha",
+    "email": "vijay.shrestha@example.com",
+    "password": "vijay456",
+    "description": "Expert in cosmetic dermatology and acne treatments.",
+    "specialization": "Dermatologist",
+    "qualification": "MD",
+    "experience_years": 8,
+    "consultation_fee": 180,
+    "image": "https://img.freepik.com/premium-photo/cute-smiling-women-doctor-portrait-hospital_1139464-210.jpg"
+  },
+  {
+    "name": "Dr. Yashoda Neupane",
+    "email": "yashoda.neupane@example.com",
+    "password": "yashoda789",
+    "description": "Focuses on autoimmune skin conditions and dermatological surgery.",
+    "specialization": "Dermatologist",
+    "qualification": "MD",
+    "experience_years": 10,
+    "consultation_fee": 200,
+    "image": "https://img.freepik.com/premium-photo/young-doctor-background-colleagues_252847-30920.jpg"
+  },
+  {
+    "name": "Dr. Arun Kumar",
+    "email": "arun.kumar@example.com",
+    "password": "arun123",
+    "description": "Skilled in neurological disorders and brain health.",
+    "specialization": "Neurologist",
+    "qualification": "MD",
+    "experience_years": 15,
+    "consultation_fee": 250,
+    "image": "https://img.freepik.com/premium-photo/young-doctor-medical-office_153977-1558.jpg"
+  },
+  {
+    "name": "Dr. Bina Ghimire",
+    "email": "bina.ghimire@example.com",
+    "password": "bina456",
+    "description": "Specializes in epilepsy and neurodegenerative diseases.",
+    "specialization": "Neurologist",
+    "qualification": "MD",
+    "experience_years": 20,
+    "consultation_fee": 270,
+    "image": "https://img.freepik.com/premium-photo/handsome-young-doctor-portrait-medical-office_709984-1331.jpg"
+  },
+  {
+    "name": "Dr. Chetan Maharjan",
+    "email": "chetan.maharjan@example.com",
+    "password": "chetan789",
+    "description": "Expert in stroke management and neurorehabilitation.",
+    "specialization": "Neurologist",
+    "qualification": "MD",
+    "experience_years": 12,
+    "consultation_fee": 260,
+    "image": "https://img.freepik.com/premium-photo/handsome-young-doctor-portrait_53419-2877.jpg"
+  },
+  {
+    "name": "Dr. Deepa Malla",
+    "email": "deepa.malla@example.com",
+    "password": "deepa123",
+    "description": "Specialist in eye care and vision correction.",
+    "specialization": "Ophthalmologist",
+    "qualification": "MD",
+    "experience_years": 14,
+    "consultation_fee": 220,
+    "image": "https://img.freepik.com/premium-photo/man-doctor-portrait-with-tablet_109285-9466.jpg"
+  },
+  {
+    "name": "Dr. Eklavya Gupta",
+    "email": "eklavya.gupta@example.com",
+    "password": "eklavya456",
+    "description": "Expert in cataract surgery and vision correction.",
+    "specialization": "Ophthalmologist",
+    "qualification": "MD",
+    "experience_years": 10,
+    "consultation_fee": 200,
+    "image": "https://img.freepik.com/premium-photo/friendly-smiling-female-doctor-standing-clinic-portrait-friendly-physician-woman-perfect-medical-service-hospital_665183-6520.jpg"
+  },
+  {
+    "name": "Dr. Gopal Tamang",
+    "email": "gopal.tamang@example.com",
+    "password": "gopal789",
+    "description": "Specializes in treating eye diseases and refractive errors.",
+    "specialization": "Ophthalmologist",
+    "qualification": "MD",
+    "experience_years": 18,
+    "consultation_fee": 230,
+    "image": "https://img.freepik.com/premium-photo/portrait-indian-female-doctor_255667-20395.jpg?w=360"
+  },
+  {
+    "name": "Dr. Harsha Gupta",
+    "email": "harsha.gupta@example.com",
+    "password": "harsha123",
+    "description": "Focuses on pediatric eye diseases and vision therapy.",
+    "specialization": "Ophthalmologist",
+    "qualification": "MD",
+    "experience_years": 12,
+    "consultation_fee": 210,
+    "image": "https://img.freepik.com/premium-photo/photo-beautiful-medical-professional-doctor-working-hospital_63106-3578.jpg"
+  },
+  {
+    "name": "Dr. Ishani Shrestha",
+    "email": "ishani.shrestha@example.com",
+    "password": "ishani456",
+    "description": "Known for treating childhood eye disorders and strabismus.",
+    "specialization": "Ophthalmologist",
+    "qualification": "MD",
+    "experience_years": 10,
+    "consultation_fee": 220,
+    "image": "https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1725667200&semt=ais_hybrid"
+  },
+  {
+    "name": "Dr. Jaya Thapa",
+    "email": "jaya.thapa@example.com",
+    "password": "jaya789",
+    "description": "Expert in ear, nose, and throat surgeries.",
+    "specialization": "ENT Specialist",
+    "qualification": "MD",
+    "experience_years": 16,
+    "consultation_fee": 240,
+    "image": "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg"
+  },
+  {
+    "name": "Dr. Kamal Shrestha",
+    "email": "kamal.shrestha@example.com",
+    "password": "kamal123",
+    "description": "Specialist in sinus surgeries and hearing loss treatments.",
+    "specialization": "ENT Specialist",
+    "qualification": "MD",
+    "experience_years": 18,
+    "consultation_fee": 260,
+    "image": "https://img.freepik.com/premium-photo/portrait-beautiful-female-doctor-office_81724-280.jpg?w=360"
+  },
+    {
+      "name": "Dr. Neha Khatri",
+      "email": "neha.khatri@example.com",
+      "password": "neha123",
+      "description": "Specializes in high-risk pregnancies and maternal-fetal medicine.",
+      "specialization": "Obstetrician",
       "qualification": "MD",
       "experience_years": 15,
-      "consultation_fee": 140
-  },
-  {
-      "name": "Dr. Deepak Patel",
-      "email": "deepak.patel@example.com",
-      "password": "deepak123",
-      "description": "Renowned cardiologist with extensive research background.",
-      "specialization": "Cardiologist",
-      "qualification": "MD",
+      "consultation_fee": 220,
+      "image": "https://img.freepik.com/free-photo/portrait-male-doctor-special-equipment_23-2148980809.jpg"
+    },
+    {
+      "name": "Dr. Suresh Bhandari",
+      "email": "suresh.bhandari@example.com",
+      "password": "suresh456",
+      "description": "Renowned for his surgical skills in complex joint replacements.",
+      "specialization": "Orthopedic Surgeon",
+      "qualification": "MS",
       "experience_years": 20,
-      "consultation_fee": 250
-  },
-  {
-      "name": "Dr. Esha Thapa",
-      "email": "esha.thapa@example.com",
-      "password": "esha456",
-      "description": "Focuses on cardiovascular health and interventions.",
-      "specialization": "Cardiologist",
+      "consultation_fee": 280,
+      "image": "https://img.freepik.com/free-photo/doctors-day-handsome-brunette-cute-guy-medical-gown-with-crossed-hands_140725-162942.jpg?t=st=1725757163~exp=1725760763~hmac=241efeac0a43533f2ec83e47e1d8d974c39ba05ef6a296f46ac8d65c8165dd7d&w=996"
+    },
+    {
+      "name": "Dr. Laxmi Tamang",
+      "email": "laxmi.tamang@example.com",
+      "password": "laxmi789",
+      "description": "Focuses on women’s health and reproductive health issues.",
+      "specialization": "Gynecologist",
+      "qualification": "MD",
+      "experience_years": 12,
+      "consultation_fee": 190,
+      "image": "https://img.freepik.com/premium-photo/portrait-middle-aged-female-doctor_255667-25025.jpg?w=360"
+    },
+    {
+      "name": "Dr. Priya Singh",
+      "email": "priya.singh@example.com",
+      "password": "priya123",
+      "description": "Specializes in pediatric care and child development.",
+      "specialization": "Pediatrician",
       "qualification": "MD",
       "experience_years": 10,
-      "consultation_fee": 220
-  },
-  {
-      "name": "Dr. Prakash Joshi",
-      "email": "prakash.joshi@example.com",
-      "password": "prakash789",
-      "description": "Specializes in heart diseases and treatments.",
+      "consultation_fee": 180,
+      "image": "https://img.freepik.com/premium-photo/smiling-female-doctor_1139464-218.jpg"
+    },
+    {
+      "name": "Dr. Rahul Mehta",
+      "email": "rahul.mehta@example.com",
+      "password": "rahul456",
+      "description": "Renowned urologist specializing in kidney transplants.",
+      "specialization": "Urologist",
+      "qualification": "MS",
+      "experience_years": 16,
+      "consultation_fee": 250,
+      "image": "https://img.freepik.com/free-photo/portrait-experienced-professional-therapist-with-stethoscope-looking-camera_1098-19305.jpg"
+    },
+    {
+      "name": "Dr. Shalini Bista",
+      "email": "shalini.bista@example.com",
+      "password": "shalini789",
+      "description": "Expert in treating chronic kidney diseases and dialysis.",
+      "specialization": "Nephrologist",
+      "qualification": "MD",
+      "experience_years": 14,
+      "consultation_fee": 230,
+      "image": "https://img.freepik.com/premium-photo/man-doctor-portrait-with-tablet_109285-9466.jpg"
+    },
+    {
+      "name": "Dr. Gopal Soni",
+      "email": "gopal.soni@example.com",
+      "password": "gopal123",
+      "description": "Expertise in non-invasive cardiac procedures.",
       "specialization": "Cardiologist",
       "qualification": "MD",
       "experience_years": 18,
-      "consultation_fee": 240
-  },
-  {
-      "name": "Dr. Rina Shah",
-      "email": "rina.shah@example.com",
-      "password": "rina123",
-      "description": "Expertise in managing gastrointestinal disorders.",
-      "specialization": "Gastroenterologist",
-      "qualification": "MD",
-      "experience_years": 14,
-      "consultation_fee": 200
-  },
-  {
-      "name": "Dr. Santosh Karki",
-      "email": "santosh.karki@example.com",
-      "password": "santosh456",
-      "description": "Known for advanced endoscopic procedures and diagnostics.",
-      "specialization": "Gastroenterologist",
-      "qualification": "MD",
-      "experience_years": 12,
-      "consultation_fee": 190
-  },
-  {
-      "name": "Dr. Tara Bhattarai",
-      "email": "tara.bhattarai@example.com",
-      "password": "tara789",
-      "description": "Specialist in treating digestive system disorders.",
-      "specialization": "Gastroenterologist",
-      "qualification": "MD",
-      "experience_years": 16,
-      "consultation_fee": 210
-  },
-  {
-      "name": "Dr. Uma Dhakal",
-      "email": "uma.dhakal@example.com",
-      "password": "uma123",
-      "description": "Renowned dermatologist with a focus on skin cancer treatments.",
-      "specialization": "Dermatologist",
-      "qualification": "MD",
-      "experience_years": 22,
-      "consultation_fee": 230
-  },
-  {
-      "name": "Dr. Vijay Shrestha",
-      "email": "vijay.shrestha@example.com",
-      "password": "vijay456",
-      "description": "Expert in cosmetic dermatology and acne treatments.",
-      "specialization": "Dermatologist",
-      "qualification": "MD",
-      "experience_years": 8,
-      "consultation_fee": 180
-  },
-  {
-      "name": "Dr. Yashoda Neupane",
-      "email": "yashoda.neupane@example.com",
-      "password": "yashoda789",
-      "description": "Focuses on autoimmune skin conditions and dermatological surgery.",
-      "specialization": "Dermatologist",
-      "qualification": "MD",
-      "experience_years": 10,
-      "consultation_fee": 200
-  },
-  {
-      "name": "Dr. Arun Kumar",
-      "email": "arun.kumar@example.com",
-      "password": "arun123",
-      "description": "Skilled in neurological disorders and brain health.",
-      "specialization": "Neurologist",
-      "qualification": "MD",
-      "experience_years": 15,
-      "consultation_fee": 250
-  },
-  {
-      "name": "Dr. Bina Ghimire",
-      "email": "bina.ghimire@example.com",
-      "password": "bina456",
-      "description": "Specializes in epilepsy and neurodegenerative diseases.",
-      "specialization": "Neurologist",
-      "qualification": "MD",
-      "experience_years": 20,
-      "consultation_fee": 270
-  },
-  {
-      "name": "Dr. Chetan Maharjan",
-      "email": "chetan.maharjan@example.com",
-      "password": "chetan789",
-      "description": "Expert in stroke management and neurorehabilitation.",
-      "specialization": "Neurologist",
-      "qualification": "MD",
-      "experience_years": 12,
-      "consultation_fee": 260
-  },
-  {
-      "name": "Dr. Deepa Malla",
-      "email": "deepa.malla@example.com",
-      "password": "deepa123",
-      "description": "Specialist in eye care and vision correction.",
-      "specialization": "Ophthalmologist",
-      "qualification": "MD",
-      "experience_years": 14,
-      "consultation_fee": 220
-  },
-  {
-      "name": "Dr. Gaurav Yadav",
-      "email": "gaurav.yadav@example.com",
-      "password": "gaurav456",
-      "description": "Known for advanced cataract and laser eye surgery.",
-      "specialization": "Ophthalmologist",
-      "qualification": "MD",
-      "experience_years": 9,
-      "consultation_fee": 210
-  },
-  {
-      "name": "Dr. Isha Bhatta",
-      "email": "isha.bhatta@example.com",
-      "password": "isha789",
-      "description": "Expertise in treating retinal disorders and glaucoma.",
-      "specialization": "Ophthalmologist",
+      "consultation_fee": 280,
+      "image": "https://img.freepik.com/premium-photo/old-male-doctor-his-office_23-2148947614.jpg"
+    },
+    {
+      "name": "Dr. Arpita Thakur",
+      "email": "arpita.thakur@example.com",
+      "password": "arpita456",
+      "description": "Renowned psychiatrist specializing in mood and anxiety disorders.",
+      "specialization": "Psychiatrist",
       "qualification": "MD",
       "experience_years": 11,
-      "consultation_fee": 230
-  },
-  {
-      "name": "Dr. Jitendra Adhikari",
-      "email": "jitendra.adhikari@example.com",
-      "password": "jitendra123",
-      "description": "Skilled in orthopedic surgeries and sports medicine.",
-      "specialization": "Orthopedist",
+      "consultation_fee": 210,
+      "image": "https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1725667200&semt=ais_hybrid"
+    },
+    {
+      "name": "Dr. Ravi Acharya",
+      "email": "ravi.acharya@example.com",
+      "password": "ravi789",
+      "description": "Expert in child psychology and adolescent mental health.",
+      "specialization": "Child Psychiatrist",
       "qualification": "MD",
-      "experience_years": 18,
-      "consultation_fee": 240
-  },
-  {
-      "name": "Dr. Kiran Rathi",
-      "email": "kiran.rathi@example.com",
-      "password": "kiran456",
-      "description": "Expert in joint replacement and trauma surgery.",
-      "specialization": "Orthopedist",
+      "experience_years": 8,
+      "consultation_fee": 180,
+      "image": "https://img.freepik.com/free-photo/portrait-male-doctor-special-equipment_23-2148980809.jpg"
+    },
+    {
+      "name": "Dr. Madhav Bista",
+      "email": "madhav.bista@example.com",
+      "password": "madhav123",
+      "description": "Renowned for advanced cancer treatments and therapies.",
+      "specialization": "Oncologist",
       "qualification": "MD",
-      "experience_years": 16,
-      "consultation_fee": 250
-  },
-  {
-      "name": "Dr. Laxmi Baral",
-      "email": "laxmi.baral@example.com",
-      "password": "laxmi789",
-      "description": "Specializes in pediatric orthopedics and limb deformities.",
-      "specialization": "Orthopedist",
+      "experience_years": 20,
+      "consultation_fee": 300,
+      "image": "https://img.freepik.com/premium-photo/portrait-indian-female-doctor_255667-20395.jpg?w=360"
+    },
+    {
+      "name": "Dr. Sarita Joshi",
+      "email": "sarita.joshi@example.com",
+      "password": "sarita456",
+      "description": "Expert in pediatric oncology and chemotherapy.",
+      "specialization": "Oncologist",
       "qualification": "MD",
       "experience_years": 12,
-      "consultation_fee": 220
-  },
-  {
-      "name": "Dr. Manisha Koirala",
-      "email": "manisha.koirala@example.com",
-      "password": "manisha123",
-      "description": "Expert in child health and pediatric care.",
-      "specialization": "Pediatrician",
+      "consultation_fee": 270,
+      "image": "https://img.freepik.com/premium-photo/photo-beautiful-medical-professional-doctor-working-hospital_63106-3578.jpg"
+    },
+    {
+      "name": "Dr. Kiran Adhikari",
+      "email": "kiran.adhikari@example.com",
+      "password": "kiran789",
+      "description": "Specializes in mental health issues such as depression and anxiety.",
+      "specialization": "Psychologist",
+      "qualification": "PhD",
+      "experience_years": 9,
+      "consultation_fee": 160,
+      "image": "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg"
+    },
+    {
+      "name": "Dr. Ramesh Rana",
+      "email": "ramesh.rana@example.com",
+      "password": "ramesh123",
+      "description": "Specializes in sports injuries and rehabilitation.",
+      "specialization": "Sports Medicine",
       "qualification": "MD",
+      "experience_years": 12,
+      "consultation_fee": 210,
+      "image": "https://img.freepik.com/premium-photo/portrait-beautiful-female-doctor-office_81724-280.jpg?w=360"
+    },
+    {
+      "name": "Dr. Nisha Pandey",
+      "email": "nisha.pandey@example.com",
+      "password": "nisha456",
+      "description": "Focuses on nutrition counseling and eating disorder treatments.",
+      "specialization": "Nutritionist",
+      "qualification": "MS",
       "experience_years": 10,
-      "consultation_fee": 160
-  },
-  {
-      "name": "Dr. Nabin Rai",
-      "email": "nabin.rai@example.com",
-      "password": "nabin456",
-      "description": "Specializes in adolescent medicine and chronic conditions.",
-      "specialization": "Pediatrician",
-      "qualification": "MD",
-      "experience_years": null,
-      "consultation_fee": null
-  }
+      "consultation_fee": 180,
+      "image": "https://img.freepik.com/premium-photo/friendly-smiling-female-doctor-standing-clinic-portrait-friendly-physician-woman-perfect-medical-service-hospital_665183-6520.jpg"
+    },
+    {
+      "name": "Dr. Deepak Singh",
+      "email": "deepak.singh@example.com",
+      "password": "deepak789",
+      "description": "Renowned dentist specializing in cosmetic dentistry.",
+      "specialization": "Dentist",
+      "qualification": "BDS",
+      "experience_years": 14,
+      "consultation_fee": 200,
+      "image": "https://img.freepik.com/free-photo/doctor-offering-medical-teleconsultation_23-2149328998.jpg?t=st=1725757128~exp=1725760728~hmac=6e6c2c91dabab45bf9cd5013ba143d411a864085a5af2955f074f21a886029d2&w=996"
+    },
+    {
+      "name": "Dr. Pooja Sharma",
+      "email": "pooja.sharma@example.com",
+      "password": "pooja123",
+      "description": "Focuses on holistic dental care and preventive dentistry.",
+      "specialization": "Dentist",
+      "qualification": "BDS",
+      "experience_years": 11,
+      "consultation_fee": 190,
+      "image": "https://img.freepik.com/premium-photo/man-doctor-portrait-with-tablet_109285-9466.jpg"
+    }
+  
 ]
+}

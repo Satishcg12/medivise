@@ -1,19 +1,27 @@
 // "use client";
-// import AiPrompt from "./aiPrompt";
-// import DoctorCard from "./DoctorCard";
-// import PageTitle from "@/components/PageTitle";
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select";
-// import { doctorCategories } from "./DoctorCard";
-// import { useEffect, useState } from "react";
-// import { useSearchParams } from "next/navigation";
-
+import AiPrompt from "./aiPrompt";
 import DoctorCard from "./DoctorCard";
+import PageTitle from "@/components/PageTitle";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { doctorCategories } from "./DoctorCard";
+import { useEffect, useState } from "react";
+import { redirect, useSearchParams } from "next/navigation";
+import { Bird, Rabbit, Sparkles, Turtle } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { AiPromptSchema } from "@/schema/aiPrompt";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 // export default function DoctorPage() {
 //   const [selectedCategorys, setSelectedCategorys] = useState<string[]>([]);
@@ -49,41 +57,24 @@ import DoctorCard from "./DoctorCard";
 //     }
 //   }, []);
 //   return (
-//     <section className="flex gap-6">
-//       {/* <AiPrompt setSelectedCategorys={setSelectedCategorys} suggest={suggest} query={query} /> */}
-//       <section className="space-y-6 flex-grow">
-//         <PageTitle title="Doctors">
-//           <Select>
-//             <SelectTrigger className="w-[180px]">
-//               <SelectValue placeholder="Specialization" />
-//             </SelectTrigger>
-//             <SelectContent>
-//               {doctorCategories.map((category) => (
-//                 <SelectItem key={category} value={category}>
-//                   {category}
-//                 </SelectItem>
-//               ))}
-//             </SelectContent>
-//           </Select>
-//         </PageTitle>
-//         <div className="ml-auto grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ">
-//           {Array.from({ length: 9 }).map((_, index) => (
-//             <DoctorCard />
-//           ))}
-//         </div>
-//       </section>
-//     </section>
+//
 //   );
 // }
 
-export default async function DoctorPage() {
+export default async function DoctorPage({searchParams = {}}) {
+  const params = new URLSearchParams(searchParams);
+  const prompt = params.get("prompt") || "";
+  if (!prompt) {
+    redirect("/404");
+  }
+
   let data = await fetch("http://localhost:3000/api/suggest", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      description: "I have a headache",
+      description: prompt,
     }),
   });
   let response = await data.json();
@@ -111,10 +102,57 @@ export default async function DoctorPage() {
   console.log(allDoctors);
 
   return (
-    <div className="ml-auto grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ">
-      {allDoctors.map((doctor) => (
-        <DoctorCard data={doctor}  />
-      ))}
-    </div>
+    <section className="flex gap-6">
+      <div className="hidden md:flex md:w-[24rem] shrink-0 sticky top-20 h-fit">
+        <form
+          method="get"
+          className="space-y-3.5 flex flex-col flex-1 border rounded-xl p-3 shadow-md"
+        >
+          <Badge className="absolute -top-2">AI Symptoms Analysis</Badge>
+
+          <div>
+            <Label htmlFor="model">Model</Label>
+            <Select>
+              <SelectTrigger>
+                <SelectValue placeholder="Select a model" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gemini">Gemini</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="flex items-start gap-3 flex-1 min-h-[50dvh]">
+            <Sparkles className="size-5 text-primary shrink-0 animate-pulse" />
+            <p className="pr-3 text-sm overflow-y-scroll max-h-[50dvh] text-justify">
+              {suggestion ? suggestion : "Get AI suggestions here"}
+            </p>
+          </div>
+
+          <div>
+            <Label htmlFor="prompt">Prompt</Label>
+            <Textarea
+              id="prompt"
+              placeholder="Describe your symptoms..."
+              name="prompt"
+              className="resize-none"
+            />
+          </div>
+
+          <Button type="submit" 
+          className="ml-auto gap-2">
+            <Sparkles className="size-4" />
+            Analyze Symptoms
+          </Button>
+        </form>
+      </div>{" "}
+      <section className="space-y-6 flex-grow">
+        
+       
+            <DoctorCard
+             data={categoryies}
+             />
+      </section>
+    </section>
   );
 }
