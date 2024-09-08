@@ -10,7 +10,7 @@ declare module "next-auth" {
   interface Session {
     user: {
       role?: string;
-        verified?: boolean;
+      verified?: boolean;
     } & DefaultSession["user"];
   }
   interface JWT {
